@@ -7,21 +7,21 @@ import 'package:news_app/views/pages/apple_news/article_page.dart';
 import 'package:news_app/widgets/colors.dart';
 import 'package:velocity_x/velocity_x.dart';
 
-class AppleNewsPage extends StatefulWidget {
-  const AppleNewsPage({Key? key}) : super(key: key);
+class TeslaNewsPage extends StatefulWidget {
+  const TeslaNewsPage({Key? key}) : super(key: key);
 
   @override
-  State<AppleNewsPage> createState() => _AppleNewsPageState();
+  State<TeslaNewsPage> createState() => _TeslaNewsPageState();
 }
 
-class _AppleNewsPageState extends State<AppleNewsPage>
+class _TeslaNewsPageState extends State<TeslaNewsPage>
     with TickerProviderStateMixin {
   late final AnimationController animationController = AnimationController(
     vsync: this,
     duration: const Duration(seconds: 3),
   )..repeat();
 
-  AppleApiServices newsServices = AppleApiServices();
+  TeslaApiServices teslaApiServices = TeslaApiServices();
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +30,7 @@ class _AppleNewsPageState extends State<AppleNewsPage>
         children: [
           Expanded(
             child: FutureBuilder<ArticleModel>(
-              future: newsServices.getAppleApi(),
+              future: teslaApiServices.getTeslaApi(),
               builder: (context, snapshot) {
                 if (snapshot.hasData) {
                   return ListView.builder(

@@ -15,7 +15,7 @@ class Routes {
 
       //HOME  PAGE
       case RoutesName.home:
-        return MaterialPageRoute(builder: (context) => const HomePage());
+        return MaterialPageRoute(builder: (context) => const AppleNewsPage());
 
       //DEFAULT
       default:
