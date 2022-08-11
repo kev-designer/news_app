@@ -8,7 +8,7 @@ import 'package:news_app/utils/app_url.dart';
 class NewsServices {
   Future<ArticleModel> getArticleApi() async {
     final response = await http.get(
-      Uri.parse(AppUrl.baseUrl),
+      Uri.parse(AppUrl.topHeadlineUrl),
     );
 
     var data = jsonDecode(response.body.toString());

@@ -3,6 +3,8 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:news_app/models/article_model.dart';
 import 'package:news_app/services/api_services.dart';
+import 'package:news_app/services/routes/routes_name.dart';
+import 'package:news_app/views/article_page.dart';
 import 'package:news_app/widgets/colors.dart';
 import 'package:velocity_x/velocity_x.dart';
 
@@ -52,7 +54,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                     itemCount: snapshot.data?.articles?.length,
                     itemBuilder: (context, index) {
                       Articles? articles = snapshot.data?.articles?[index];
-                      print(articles);
+
                       return Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -171,7 +173,29 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                     //READ MORE
                                     Expanded(
                                       child: InkWell(
-                                        onTap: () {},
+                                        onTap: () {
+                                          Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                              builder: (context) => ArticlePage(
+                                                title: snapshot.data!
+                                                    .articles![index].title
+                                                    .toString(),
+                                                urlToImage: snapshot.data!
+                                                    .articles![index].urlToImage
+                                                    .toString(),
+                                                description: snapshot
+                                                    .data!
+                                                    .articles![index]
+                                                    .description
+                                                    .toString(),
+                                                content: snapshot.data!
+                                                    .articles![index].content
+                                                    .toString(),
+                                              ),
+                                            ),
+                                          );
+                                        },
                                         child: Container(
                                           height: 32,
                                           padding: const EdgeInsets.only(
