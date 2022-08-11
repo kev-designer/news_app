@@ -192,6 +192,14 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                                 content: snapshot.data!
                                                     .articles![index].content
                                                     .toString(),
+                                                publishedAt: snapshot
+                                                    .data!
+                                                    .articles![index]
+                                                    .publishedAt
+                                                    .toString(),
+                                                author: snapshot.data!
+                                                    .articles![index].author
+                                                    .toString(),
                                               ),
                                             ),
                                           );
