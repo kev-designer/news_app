@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:news_app/widgets/colors.dart';
-import 'package:news_app/widgets/const.dart';
 import 'package:tab_indicator_styler/tab_indicator_styler.dart';
 import 'package:velocity_x/velocity_x.dart';
 
