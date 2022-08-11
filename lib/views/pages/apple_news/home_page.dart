@@ -236,24 +236,3 @@ class _AppleNewsPageState extends State<AppleNewsPage>
     );
   }
 }
-
-class CategoryTile extends StatelessWidget {
-  final String imageUrl, catName;
-  const CategoryTile({required this.imageUrl, required this.catName, Key? key})
-      : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      child: Stack(
-        children: [
-          Image.network(
-            imageUrl,
-            height: 60,
-            width: 120,
-          ),
-        ],
-      ),
-    );
-  }
-}

@@ -4,7 +4,6 @@ import 'package:news_app/widgets/colors.dart';
 
 import 'services/routes/routes_name.dart';
 import 'views/app_bar/all_appbar.dart';
-import 'views/pages/apple_news/home_page.dart';
 
 void main() {
   runApp(const MyApp());
