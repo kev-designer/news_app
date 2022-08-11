@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:news_app/models/article_model.dart';
+import 'package:news_app/widgets/app_bar.dart';
 import 'package:news_app/widgets/buttons.dart';
 import 'package:news_app/widgets/colors.dart';
 import 'package:velocity_x/velocity_x.dart';
@@ -32,31 +33,7 @@ class _ArticlePageState extends State<ArticlePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: false,
-        elevation: 0,
-        backgroundColor: ColorData.white,
-        leading: IconButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          icon: const Icon(
-            Icons.arrow_back_ios,
-            color: ColorData.primary,
-          ),
-        ),
-        title: Text(widget.title,
-                style: GoogleFonts.nunito(
-                  color: ColorData.black,
-                ))
-            .text
-            .xl2
-            .semiBold
-            .maxLines(1)
-            .softWrap(true)
-            .overflow(TextOverflow.ellipsis)
-            .make(),
-      ),
+      appBar: buildAppBar(widget.title, context),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(20),

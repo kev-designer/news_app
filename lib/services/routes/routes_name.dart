@@ -1,5 +1,5 @@
 class RoutesName {
-  static const String home = "home_page";
-
-  static const String article = "article_page";
+  static const String allAppBar = "allAppBar";
+  static const String home = "homePage";
+  static const String article = "articlePage";
 }

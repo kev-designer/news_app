@@ -3,8 +3,8 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:news_app/models/article_model.dart';
 import 'package:news_app/services/api_services.dart';
-import 'package:news_app/services/routes/routes_name.dart';
-import 'package:news_app/views/article_page.dart';
+import 'package:news_app/views/pages/apple_news/article_page.dart';
+import 'package:news_app/widgets/app_bar.dart';
 import 'package:news_app/widgets/colors.dart';
 import 'package:velocity_x/velocity_x.dart';
 
@@ -21,32 +21,16 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
     duration: const Duration(seconds: 3),
   )..repeat();
 
-  NewsServices newsServices = NewsServices();
+  AppleApiServices newsServices = AppleApiServices();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        elevation: 0,
-        backgroundColor: ColorData.white,
-        title: HStack(
-          [
-            Text(
-              "News",
-              style: GoogleFonts.nunito(color: ColorData.primary),
-            ).text.xl2.semiBold.make(),
-            Text(
-              "App",
-              style: GoogleFonts.nunito(color: ColorData.secondary),
-            ).text.xl2.semiBold.make(),
-          ],
-        ),
-      ),
       body: Column(
         children: [
           Expanded(
             child: FutureBuilder<ArticleModel>(
-              future: newsServices.getArticleApi(),
+              future: newsServices.getAppleApi(),
               builder: (context, snapshot) {
                 if (snapshot.hasData) {
                   return ListView.builder(

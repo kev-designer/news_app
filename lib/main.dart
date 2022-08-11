@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/services/routes/routes.dart';
-import 'package:news_app/views/home_page.dart';
 import 'package:news_app/widgets/colors.dart';
 
 import 'services/routes/routes_name.dart';
+import 'views/app_bar/all_appbar.dart';
+import 'views/pages/apple_news/home_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -21,9 +22,9 @@ class MyApp extends StatelessWidget {
         primaryColor: ColorData.white,
         primarySwatch: Colors.blue,
       ),
-      initialRoute: RoutesName.home,
+      initialRoute: RoutesName.allAppBar,
       onGenerateRoute: Routes.generateRoute,
-      home: const HomePage(),
+      home: const AllAppBar(),
     );
   }
 }
